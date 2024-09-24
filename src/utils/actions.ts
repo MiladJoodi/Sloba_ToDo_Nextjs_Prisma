@@ -41,3 +41,12 @@ export const deleteTask = async (formData: FormData): Promise<void> => {
   
     revalidatePath("/todo-list");
   };
+
+  // Update
+  export const getTask = async (id:any)=> {
+    return prisma.task.findUnique({
+      where: {
+        id
+      }
+    })
+  }
